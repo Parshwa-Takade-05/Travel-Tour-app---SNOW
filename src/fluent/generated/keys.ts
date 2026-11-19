@@ -65,6 +65,86 @@ declare global {
                         table: 'sys_app_module'
                         id: 'ba969d6960404a9c99cf7abd95f41c5f'
                     }
+                    'tt-dashboard-widget': {
+                        table: 'sp_widget'
+                        id: '8cc464381dd64b8bbdc9f3f827d6e471'
+                    }
+                    'tt-detail-col': {
+                        table: 'sp_column'
+                        id: 'e537acba0afb4498b61263dbb991cc8f'
+                    }
+                    'tt-detail-container': {
+                        table: 'sp_container'
+                        id: '9d8dc0ff3bdc43af85d0cbfbd59397e5'
+                    }
+                    'tt-detail-instance': {
+                        table: 'sp_instance'
+                        id: 'f988f81bab814303acb702d520c5e36f'
+                    }
+                    'tt-detail-row': {
+                        table: 'sp_row'
+                        id: '8c4dc47309bc442fa281297bf8a92b92'
+                    }
+                    'tt-home-col': {
+                        table: 'sp_column'
+                        id: 'fd9b437a5f9f4099bd67402cae59a259'
+                    }
+                    'tt-home-container': {
+                        table: 'sp_container'
+                        id: '4ee366f24e024771b23b27ccf3d3ac60'
+                    }
+                    'tt-home-instance': {
+                        table: 'sp_instance'
+                        id: 'bcad8288f3cf479e9422e3967a8fee5b'
+                    }
+                    'tt-home-row': {
+                        table: 'sp_row'
+                        id: '15d2a72a38ab4f34882f65c8cdebc350'
+                    }
+                    'tt-menu-home': {
+                        table: 'sp_rectangle_menu_item'
+                        id: 'ff884ec255004d2ca90b088b0770a093'
+                    }
+                    'tt-menu-new': {
+                        table: 'sp_rectangle_menu_item'
+                        id: '58adc2a4014d440484ac9d94483c5379'
+                    }
+                    'tt-portal': {
+                        table: 'sp_portal'
+                        id: '91a26f33908d40e8bc4186ed75178a3a'
+                    }
+                    'tt-portal-menu': {
+                        table: 'sp_instance_menu'
+                        id: '5d719e32a88f4a3b835eab270afd1d03'
+                    }
+                    'tt-request-col': {
+                        table: 'sp_column'
+                        id: 'bf37810d03274430bd2000d6c07600ab'
+                    }
+                    'tt-request-container': {
+                        table: 'sp_container'
+                        id: 'a8509fe9e0724168a0e69dce9f686ecf'
+                    }
+                    'tt-request-detail-widget': {
+                        table: 'sp_widget'
+                        id: '9540057018204597aaa8376a0efc8b44'
+                    }
+                    'tt-request-form-widget': {
+                        table: 'sp_widget'
+                        id: '2a6fe72097cb44b398fd5a95cd652d4a'
+                    }
+                    'tt-request-instance': {
+                        table: 'sp_instance'
+                        id: '2588a1fa0fa1470abb53b4513a87bafe'
+                    }
+                    'tt-request-row': {
+                        table: 'sp_row'
+                        id: '70f3c427985e4d9f9bb187c4348ec736'
+                    }
+                    'tt-theme': {
+                        table: 'sp_theme'
+                        id: '3eece6e7d52f4a37a207d59ba7a0937e'
+                    }
                 }
                 composite: [
                     {
@@ -840,6 +920,13 @@ declare global {
                         }
                     },
                     {
+                        table: 'sp_page'
+                        id: '98a6ae0d1e234a2c805463ffa228014a'
+                        key: {
+                            id: 'x_2313668_pumkin_s_request'
+                        }
+                    },
+                    {
                         table: 'sys_ui_section'
                         id: '9d127abd64064a15890fd23966639ee2'
                         key: {
@@ -1260,6 +1347,13 @@ declare global {
                         }
                     },
                     {
+                        table: 'sp_page'
+                        id: 'f58ff61cad0343969497efe8885adddf'
+                        key: {
+                            id: 'x_2313668_pumkin_s_home'
+                        }
+                    },
+                    {
                         table: 'sys_ui_policy_action'
                         id: 'f8a779c4ec2e4a959978409e004da772'
                         key: {
@@ -1271,6 +1365,13 @@ declare global {
                                 }
                             }
                             field: 'mileage_estimate'
+                        }
+                    },
+                    {
+                        table: 'sp_page'
+                        id: 'fb8f59d1bf4b4e9989acb9f3e94403af'
+                        key: {
+                            id: 'x_2313668_pumkin_s_detail'
                         }
                     },
                     {
