@@ -1,0 +1,167 @@
+<div class="tt">
+
+  <div class="tt-page-head">
+    <div>
+      <a class="tt-back" href="?id=x_2313668_pumkin_s_home"><i class="fa fa-angle-left" aria-hidden="true"></i> All trips</a>
+      <h1 class="tt-page-title">{{c.data.sysId ? 'Edit travel request' : 'New travel request'}}</h1>
+      <p class="tt-page-sub">Tell us where the music is going next.</p>
+    </div>
+  </div>
+
+  <div class="tt-alert" ng-if="!c.data.allowed">
+    You do not have permission to {{c.data.sysId ? 'edit this request' : 'submit travel requests'}}.
+  </div>
+
+  <div ng-if="c.data.allowed && c.view === 'form'">
+    <div class="tt-steps" aria-hidden="true">
+      <span class="tt-step"><span class="tt-step-num">1</span> Trip basics</span>
+      <span class="tt-step"><span class="tt-step-num">2</span> Travel details</span>
+      <span class="tt-step"><span class="tt-step-num">3</span> International</span>
+      <span class="tt-step"><span class="tt-step-num">4</span> Justification</span>
+    </div>
+
+    <div class="tt-alert" role="alert" ng-if="c.errors.length">
+      <ul><li ng-repeat="err in c.errors track by $index">{{err}}</li></ul>
+    </div>
+
+    <form name="tripForm" ng-submit="c.save()" novalidate>
+
+      <!-- Trip Basics -->
+      <section class="tt-panel">
+        <div class="tt-panel-head">
+          <span class="tt-panel-icon tt-tag-violet"><i class="fa fa-map-signs" aria-hidden="true"></i></span>
+          <div><h2 class="tt-panel-title">Trip basics</h2></div>
+        </div>
+        <div class="tt-fields">
+          <div class="tt-field tt-field-wide">
+            <label for="tt-title">Title <span class="tt-req">*</span></label>
+            <input id="tt-title" class="tt-input" ng-class="{'tt-input-error': c.missing('title')}" type="text" ng-model="c.form.title" maxlength="160" placeholder="e.g. Querystring - Berlin Festival" />
+            <div class="tt-error" ng-if="c.missing('title')">Title is required.</div>
+          </div>
+          <div class="tt-field">
+            <label for="tt-purpose">Purpose</label>
+            <select id="tt-purpose" class="tt-input" ng-model="c.form.purpose"
+                    ng-options="o.value as o.label for o in c.data.choices.purpose">
+              <option value="">Select a purpose</option>
+            </select>
+          </div>
+          <div class="tt-field">
+            <label for="tt-city">Destination city</label>
+            <input id="tt-city" class="tt-input" type="text" ng-model="c.form.destination_city" maxlength="100" placeholder="e.g. Berlin" />
+          </div>
+          <div class="tt-field">
+            <label for="tt-dep">Departure date <span class="tt-req">*</span></label>
+            <input id="tt-dep" class="tt-input" ng-class="{'tt-input-error': c.missing('departure_date')}" type="date" ng-model="c.form.departure_date" />
+            <div class="tt-error" ng-if="c.missing('departure_date')">Departure date is required.</div>
+          </div>
+          <div class="tt-field">
+            <label for="tt-ret">Return date <span class="tt-req">*</span></label>
+            <input id="tt-ret" class="tt-input" ng-class="{'tt-input-error': c.missing('return_date')}" type="date" ng-model="c.form.return_date" />
+            <div class="tt-error" ng-if="c.missing('return_date')">Return date is required.</div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Travel Details -->
+      <section class="tt-panel">
+        <div class="tt-panel-head">
+          <span class="tt-panel-icon tt-tag-teal"><i class="fa fa-road" aria-hidden="true"></i></span>
+          <div><h2 class="tt-panel-title">Travel details</h2><p class="tt-panel-note">Pick how you are getting there.</p></div>
+        </div>
+        <div class="tt-seg" role="radiogroup" aria-label="Transportation">
+          <button type="button" role="radio" class="tt-seg-item"
+                  ng-repeat="t in c.transportOptions track by t.value"
+                  aria-checked="{{c.form.transportation === t.value}}"
+                  ng-class="{'tt-seg-active': c.form.transportation === t.value}"
+                  ng-click="c.setTransport(t.value)">
+            <i class="fa" ng-class="t.icon" aria-hidden="true"></i>{{t.label}}
+          </button>
+        </div>
+
+        <div class="tt-fields" ng-if="c.form.transportation">
+          <div class="tt-field" ng-if="c.form.transportation === 'flight'">
+            <label for="tt-class">Flight class</label>
+            <select id="tt-class" class="tt-input" ng-model="c.form.flight_class"
+                    ng-options="o.value as o.label for o in c.data.choices.flightClass">
+              <option value="">Select a class</option>
+            </select>
+          </div>
+          <div class="tt-field" ng-if="c.form.transportation === 'car_rental'">
+            <label for="tt-car">Rental car size</label>
+            <select id="tt-car" class="tt-input" ng-model="c.form.rental_car_size"
+                    ng-options="o.value as o.label for o in c.data.choices.carSize">
+              <option value="">Select a size</option>
+            </select>
+          </div>
+          <div class="tt-field" ng-if="c.form.transportation === 'personal_vehicle'">
+            <label for="tt-miles">Mileage estimate</label>
+            <input id="tt-miles" class="tt-input" type="number" min="0" ng-model="c.form.mileage_estimate" placeholder="Total miles" />
+          </div>
+        </div>
+      </section>
+
+      <!-- International Travel -->
+      <section class="tt-panel">
+        <div class="tt-panel-head">
+          <span class="tt-panel-icon tt-tag-pink"><i class="fa fa-globe" aria-hidden="true"></i></span>
+          <div><h2 class="tt-panel-title">International travel</h2></div>
+        </div>
+        <label class="tt-toggle" for="tt-intl">
+          <input id="tt-intl" type="checkbox" ng-model="c.form.international_trip" />
+          <span>This is an international trip</span>
+        </label>
+        <div class="tt-fields" ng-if="c.form.international_trip">
+          <div class="tt-field">
+            <label for="tt-passport">Passport expiration date</label>
+            <input id="tt-passport" class="tt-input" type="date" ng-model="c.form.passport_expiration_date" />
+          </div>
+          <div class="tt-field">
+            <label for="tt-visa">Visa required</label>
+            <label class="tt-toggle" for="tt-visa">
+              <input id="tt-visa" type="checkbox" ng-model="c.form.visa_required" />
+              <span>A visa is required</span>
+            </label>
+          </div>
+        </div>
+      </section>
+
+      <!-- Justification -->
+      <section class="tt-panel">
+        <div class="tt-panel-head">
+          <span class="tt-panel-icon tt-tag-amber"><i class="fa fa-pencil-square-o" aria-hidden="true"></i></span>
+          <div><h2 class="tt-panel-title">Justification</h2></div>
+        </div>
+        <div class="tt-fields">
+          <div class="tt-field tt-field-wide">
+            <label for="tt-why">Business justification <span class="tt-req">*</span></label>
+            <textarea id="tt-why" class="tt-input" ng-class="{'tt-input-error': c.missing('business_justification')}" ng-model="c.form.business_justification" placeholder="Why does this trip need to happen?"></textarea>
+            <div class="tt-error" ng-if="c.missing('business_justification')">Business justification is required.</div>
+          </div>
+          <div class="tt-field">
+            <label for="tt-cost">Estimated total cost</label>
+            <input id="tt-cost" class="tt-input" type="number" min="0" step="0.01" ng-model="c.form.estimated_total_cost" placeholder="0.00" />
+          </div>
+        </div>
+      </section>
+
+      <div class="tt-actions">
+        <a class="tt-btn tt-btn-ghost" href="?id=x_2313668_pumkin_s_home">Cancel</a>
+        <button type="submit" class="tt-btn tt-btn-primary" ng-disabled="c.saving">
+          <span ng-if="c.saving"><i class="fa fa-spinner fa-spin" aria-hidden="true"></i> Saving</span>
+          <span ng-if="!c.saving">{{c.data.sysId ? 'Save changes' : 'Submit request'}}</span>
+        </button>
+      </div>
+    </form>
+  </div>
+
+  <div class="tt-success" ng-if="c.view === 'success'">
+    <i class="fa fa-check-circle" aria-hidden="true"></i>
+    <h2>{{c.edited ? 'Request updated' : 'Request submitted'}}</h2>
+    <p>Your travel request has been saved.</p>
+    <div class="tt-actions">
+      <a class="tt-btn tt-btn-primary" href="?id=x_2313668_pumkin_s_detail&amp;sys_id={{c.savedId}}">View request</a>
+      <a class="tt-btn tt-btn-ghost" href="?id=x_2313668_pumkin_s_home">Back to all trips</a>
+    </div>
+  </div>
+
+</div>

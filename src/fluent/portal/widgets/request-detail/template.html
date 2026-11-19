@@ -1,0 +1,79 @@
+<div class="tt">
+
+  <div class="tt-empty" ng-if="!c.data.found">
+    <i class="fa fa-search" aria-hidden="true"></i>
+    <h3>Request not found</h3>
+    <p>It may have been removed, or you may not have access to it.</p>
+    <a class="tt-btn tt-btn-primary" href="?id=x_2313668_pumkin_s_home">Back to all trips</a>
+  </div>
+
+  <div ng-if="c.data.found">
+    <a class="tt-back" href="?id=x_2313668_pumkin_s_home"><i class="fa fa-angle-left" aria-hidden="true"></i> All trips</a>
+
+    <section class="tt-detail-hero">
+      <div class="tt-detail-top">
+        <div>
+          <span class="tt-eyebrow">{{c.data.rec.purpose || 'Trip'}}</span>
+          <h1>{{c.data.rec.title}}</h1>
+          <p>
+            <span ng-if="c.data.rec.city"><i class="fa fa-map-marker" aria-hidden="true"></i> {{c.data.rec.city}} &middot; </span>
+            {{c.data.rec.departure}} &rarr; {{c.data.rec.ret}}<span ng-if="c.data.rec.nights"> &middot; {{c.data.rec.nights}} nights</span>
+          </p>
+        </div>
+        <a class="tt-btn tt-btn-light" ng-if="c.data.rec.canEdit" href="?id=x_2313668_pumkin_s_request&amp;sys_id={{c.data.rec.sys_id}}">
+          <i class="fa fa-pencil" aria-hidden="true"></i> Edit request
+        </a>
+      </div>
+    </section>
+
+    <div class="tt-detail-layout">
+      <div>
+        <section class="tt-panel">
+          <div class="tt-panel-head">
+            <span class="tt-panel-icon tt-tag-teal"><i class="fa fa-road" aria-hidden="true"></i></span>
+            <h2 class="tt-panel-title">Travel details</h2>
+          </div>
+          <div class="tt-kv">
+            <div><div class="tt-kv-label">Transportation</div><div class="tt-kv-value">{{c.data.rec.transport || 'Not set'}}</div></div>
+            <div ng-if="c.data.rec.transportKey === 'flight'"><div class="tt-kv-label">Flight class</div><div class="tt-kv-value">{{c.data.rec.flightClass || 'Not set'}}</div></div>
+            <div ng-if="c.data.rec.transportKey === 'car_rental'"><div class="tt-kv-label">Rental car size</div><div class="tt-kv-value">{{c.data.rec.carSize || 'Not set'}}</div></div>
+            <div ng-if="c.data.rec.transportKey === 'personal_vehicle'"><div class="tt-kv-label">Mileage estimate</div><div class="tt-kv-value">{{c.data.rec.mileage || 'Not set'}}</div></div>
+          </div>
+        </section>
+
+        <section class="tt-panel" ng-if="c.data.rec.international">
+          <div class="tt-panel-head">
+            <span class="tt-panel-icon tt-tag-pink"><i class="fa fa-globe" aria-hidden="true"></i></span>
+            <h2 class="tt-panel-title">International travel</h2>
+          </div>
+          <div class="tt-kv">
+            <div><div class="tt-kv-label">Passport expires</div><div class="tt-kv-value">{{c.data.rec.passport || 'Not provided'}}</div></div>
+            <div><div class="tt-kv-label">Visa required</div><div class="tt-kv-value">{{c.data.rec.visa ? 'Yes' : 'No'}}</div></div>
+          </div>
+        </section>
+
+        <section class="tt-panel">
+          <div class="tt-panel-head">
+            <span class="tt-panel-icon tt-tag-amber"><i class="fa fa-pencil-square-o" aria-hidden="true"></i></span>
+            <h2 class="tt-panel-title">Business justification</h2>
+          </div>
+          <p class="tt-justification">{{c.data.rec.justification}}</p>
+        </section>
+      </div>
+
+      <aside>
+        <section class="tt-panel">
+          <div class="tt-kv-label">Estimated total cost</div>
+          <div class="tt-cost-big" ng-if="c.data.rec.cost">${{c.data.rec.cost | number:2}}</div>
+          <div class="tt-cost-big tt-muted" ng-if="!c.data.rec.cost">No estimate</div>
+        </section>
+        <section class="tt-panel">
+          <div class="tt-kv-label">Submitted by</div>
+          <div class="tt-kv-value">{{c.data.rec.createdBy}}</div>
+          <div class="tt-panel-note">{{c.data.rec.createdOn}}</div>
+        </section>
+      </aside>
+    </div>
+  </div>
+
+</div>

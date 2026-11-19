@@ -1,0 +1,97 @@
+<div class="tt">
+
+  <section class="tt-hero">
+    <div class="tt-hero-copy">
+      <span class="tt-eyebrow"><i class="fa fa-music" aria-hidden="true"></i> Glide Records Music</span>
+      <h1 class="tt-hero-title">{{c.data.heroTitle}}</h1>
+      <p class="tt-hero-sub">{{c.data.heroSubtitle}}</p>
+      <div class="tt-hero-actions" ng-if="c.data.canCreate">
+        <a class="tt-btn tt-btn-light" href="?id=x_2313668_pumkin_s_request">
+          <i class="fa fa-plus" aria-hidden="true"></i> New travel request
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <section class="tt-stats" aria-label="Travel summary">
+    <div class="tt-stat">
+      <span class="tt-stat-icon tt-tag-violet"><i class="fa fa-map-signs" aria-hidden="true"></i></span>
+      <div><div class="tt-stat-value">{{c.data.stats.total}}</div><div class="tt-stat-label">Total requests</div></div>
+    </div>
+    <div class="tt-stat">
+      <span class="tt-stat-icon tt-tag-teal"><i class="fa fa-calendar-check-o" aria-hidden="true"></i></span>
+      <div><div class="tt-stat-value">{{c.data.stats.upcoming}}</div><div class="tt-stat-label">Upcoming trips</div></div>
+    </div>
+    <div class="tt-stat">
+      <span class="tt-stat-icon tt-tag-pink"><i class="fa fa-globe" aria-hidden="true"></i></span>
+      <div><div class="tt-stat-value">{{c.data.stats.international}}</div><div class="tt-stat-label">International</div></div>
+    </div>
+    <div class="tt-stat">
+      <span class="tt-stat-icon tt-tag-amber"><i class="fa fa-usd" aria-hidden="true"></i></span>
+      <div><div class="tt-stat-value">{{c.data.stats.cost | number:0}}</div><div class="tt-stat-label">Estimated spend</div></div>
+    </div>
+  </section>
+
+  <section class="tt-toolbar">
+    <div class="tt-chips" role="tablist">
+      <button type="button" class="tt-chip" role="tab"
+              ng-repeat="f in c.filters track by f.key"
+              ng-class="{'tt-chip-active': c.filter === f.key}"
+              ng-click="c.setFilter(f.key)">{{f.label}}</button>
+    </div>
+    <div class="tt-search">
+      <label for="tt-search-input" class="sr-only">Search trips</label>
+      <i class="fa fa-search" aria-hidden="true"></i>
+      <input id="tt-search-input" type="search" ng-model="c.query" placeholder="Search by title, city or purpose" />
+    </div>
+  </section>
+
+  <section class="tt-grid" ng-if="c.visible().length">
+    <article class="tt-card" ng-repeat="rec in c.visible() | limitTo:c.limit track by rec.sys_id">
+      <header class="tt-card-head">
+        <span class="tt-tag" ng-class="rec.purposeClass">{{rec.purpose || 'Trip'}}</span>
+        <span class="tt-timing" ng-class="'tt-timing-' + rec.timing">
+          <span ng-if="rec.timing === 'upcoming'">Upcoming</span>
+          <span ng-if="rec.timing === 'inprogress'">In progress</span>
+          <span ng-if="rec.timing === 'completed'">Completed</span>
+        </span>
+      </header>
+
+      <h3 class="tt-card-title">{{rec.title}}</h3>
+      <p class="tt-card-city" ng-if="rec.city"><i class="fa fa-map-marker" aria-hidden="true"></i> {{rec.city}}</p>
+
+      <div class="tt-card-dates">
+        <i class="fa fa-calendar-o" aria-hidden="true"></i>
+        {{rec.departure}} &rarr; {{rec.ret}}
+        <span class="tt-muted" ng-if="rec.nights">&middot; {{rec.nights}} nights</span>
+      </div>
+
+      <div class="tt-card-meta">
+        <span class="tt-meta-pill"><i class="fa" ng-class="rec.transportIcon" aria-hidden="true"></i>
+          {{rec.transportLabel || 'Not set'}}<span ng-if="rec.transportDetail"> &middot; {{rec.transportDetail}}</span></span>
+        <span class="tt-meta-pill" ng-if="rec.international"><i class="fa fa-globe" aria-hidden="true"></i> International<span ng-if="rec.visa"> &middot; Visa</span></span>
+      </div>
+
+      <footer class="tt-card-foot">
+        <span class="tt-card-cost" ng-if="rec.cost">${{rec.cost | number:0}}</span>
+        <span class="tt-card-cost tt-muted" ng-if="!rec.cost">No estimate</span>
+        <span class="tt-card-links">
+          <a class="tt-link" ng-if="rec.canEdit" href="?id=x_2313668_pumkin_s_request&amp;sys_id={{rec.sys_id}}">Edit</a>
+          <a class="tt-link tt-link-strong" href="?id=x_2313668_pumkin_s_detail&amp;sys_id={{rec.sys_id}}">View <i class="fa fa-angle-right" aria-hidden="true"></i></a>
+        </span>
+      </footer>
+    </article>
+  </section>
+
+  <div class="tt-more" ng-if="c.visible().length > c.limit">
+    <button type="button" class="tt-btn tt-btn-ghost" ng-click="c.showMore()">Show more trips</button>
+  </div>
+
+  <section class="tt-empty" ng-if="!c.visible().length">
+    <i class="fa fa-suitcase" aria-hidden="true"></i>
+    <h3>No trips found</h3>
+    <p>Try another filter or search, or start a new travel request.</p>
+    <a class="tt-btn tt-btn-primary" ng-if="c.data.canCreate" href="?id=x_2313668_pumkin_s_request">New travel request</a>
+  </section>
+
+</div>
