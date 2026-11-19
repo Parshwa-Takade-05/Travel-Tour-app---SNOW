@@ -1,0 +1,19 @@
+<?xml version="1.0"?>
+<record_update table="sys_db_object">
+  <sys_db_object action="INSERT_OR_UPDATE" apply_defaults="true">
+    <sys_id>ac32769ade264d32ace4c66f4658e079</sys_id>
+    <sys_scope display_value="x_2313668_pumkin_s">6d98fdf2b9b9499ca2f33b08ea2d1e7f</sys_scope>
+    <sys_update_name>sys_db_object_ac32769ade264d32ace4c66f4658e079</sys_update_name>
+    <access>public</access>
+    <caller_access/>
+    <create_access_controls>false</create_access_controls>
+    <is_extendable>false</is_extendable>
+    <label>Travel Request</label>
+    <live_feed_enabled>false</live_feed_enabled>
+    <name>x_2313668_pumkin_s_travel_request</name>
+    <number_ref/>
+    <scriptable_table>false</scriptable_table>
+    <super_class/>
+    <user_role/>
+  </sys_db_object>
+</record_update>

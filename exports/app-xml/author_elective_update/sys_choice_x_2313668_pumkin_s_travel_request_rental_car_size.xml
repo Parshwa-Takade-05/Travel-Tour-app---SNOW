@@ -1,0 +1,59 @@
+<?xml version="1.0"?>
+<record_update>
+  <sys_choice_set action="INSERT_OR_UPDATE" field="rental_car_size" table="x_2313668_pumkin_s_travel_request" version="3" apply_defaults="true">
+    <sys_choice_set action="INSERT_OR_UPDATE" apply_defaults="true">
+      <sys_id>2c1b7ad908ae4ca1bdf5a9bfdc425f14</sys_id>
+      <element>rental_car_size</element>
+      <sys_update_name>sys_choice_x_2313668_pumkin_s_travel_request_rental_car_size</sys_update_name>
+      <name>x_2313668_pumkin_s_travel_request</name>
+      <sys_class_name>sys_choice_set</sys_class_name>
+      <sys_scope display_value="x_2313668_pumkin_s">6d98fdf2b9b9499ca2f33b08ea2d1e7f</sys_scope>
+      <sys_package display_value="x_2313668_pumkin_s" source="6d98fdf2b9b9499ca2f33b08ea2d1e7f">6d98fdf2b9b9499ca2f33b08ea2d1e7f</sys_package>
+      <sys_name>rental_car_size</sys_name>
+    </sys_choice_set>
+    <sys_choice action="INSERT_OR_UPDATE" apply_defaults="true">
+      <sys_id>2b91baacf69d479f990278efdeb842cd</sys_id>
+      <name>x_2313668_pumkin_s_travel_request</name>
+      <element>rental_car_size</element>
+      <label>Compact</label>
+      <value>compact</value>
+      <sequence>1</sequence>
+      <inactive>false</inactive>
+      <inactive_on_update>false</inactive_on_update>
+      <language>en</language>
+    </sys_choice>
+    <sys_choice action="INSERT_OR_UPDATE" apply_defaults="true">
+      <sys_id>94b99f5c114e42e5b20ad777bdb709a8</sys_id>
+      <name>x_2313668_pumkin_s_travel_request</name>
+      <element>rental_car_size</element>
+      <label>Mid-size</label>
+      <value>mid_size</value>
+      <sequence>2</sequence>
+      <inactive>false</inactive>
+      <inactive_on_update>false</inactive_on_update>
+      <language>en</language>
+    </sys_choice>
+    <sys_choice action="INSERT_OR_UPDATE" apply_defaults="true">
+      <sys_id>41826fea016444be93fce4fe2952ca2b</sys_id>
+      <name>x_2313668_pumkin_s_travel_request</name>
+      <element>rental_car_size</element>
+      <label>Full-size</label>
+      <value>full_size</value>
+      <sequence>3</sequence>
+      <inactive>false</inactive>
+      <inactive_on_update>false</inactive_on_update>
+      <language>en</language>
+    </sys_choice>
+    <sys_choice action="INSERT_OR_UPDATE" apply_defaults="true">
+      <sys_id>7daa44abd0634d5c93b7821b9b11e5c6</sys_id>
+      <name>x_2313668_pumkin_s_travel_request</name>
+      <element>rental_car_size</element>
+      <label>SUV</label>
+      <value>suv</value>
+      <sequence>4</sequence>
+      <inactive>false</inactive>
+      <inactive_on_update>false</inactive_on_update>
+      <language>en</language>
+    </sys_choice>
+  </sys_choice_set>
+</record_update>

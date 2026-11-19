@@ -1,0 +1,46 @@
+<?xml version="1.0"?>
+<database>
+  <element name="x_2313668_pumkin_s_travel_request" type="collection" label="Travel Request" is_extendable="false" text_index="false" read_only="false" audit="false" display="title" access="public" caller_access="0" scriptable_table="false" attributes="" create_roles="" read_roles="" write_roles="" delete_roles="">
+    <element name="title" type="string" active="true" array="false" audit="false" unique="false" label="Title" max_length="160" mandatory="true" read_only="false" choice="0" display="true" function_field="false" attributes="" spell_check="false" xml_view="false" table_reference="false" text_index="false" element_reference="false" primary="false" plural="Titles" create_roles="" read_roles="" write_roles="" delete_roles=""/>
+    <element name="purpose" type="choice" active="true" array="false" audit="false" unique="false" label="Purpose" mandatory="false" read_only="false" choice="0" display="false" function_field="false" attributes="" spell_check="false" xml_view="false" table_reference="false" text_index="false" element_reference="false" primary="false" plural="Purposes" create_roles="" read_roles="" write_roles="" delete_roles="">
+      <choice>
+        <element value="tour_leg" label="Tour Leg" inactive="false" inactive_on_update="false" sequence="1" language="en"/>
+        <element value="festival" label="Festival" inactive="false" inactive_on_update="false" sequence="2" language="en"/>
+        <element value="promo_appearance" label="Promo Appearance" inactive="false" inactive_on_update="false" sequence="3" language="en"/>
+        <element value="recording_session" label="Recording Session" inactive="false" inactive_on_update="false" sequence="4" language="en"/>
+        <element value="other" label="Other" inactive="false" inactive_on_update="false" sequence="5" language="en"/>
+      </choice>
+    </element>
+    <element name="destination_city" type="string" active="true" array="false" audit="false" unique="false" label="Destination city" max_length="100" mandatory="false" read_only="false" choice="0" display="false" function_field="false" attributes="" spell_check="false" xml_view="false" table_reference="false" text_index="false" element_reference="false" primary="false" plural="Destination cities" create_roles="" read_roles="" write_roles="" delete_roles=""/>
+    <element name="departure_date" type="glide_date" active="true" array="false" audit="false" unique="false" label="Departure date" mandatory="true" read_only="false" choice="0" display="false" function_field="false" attributes="" spell_check="false" xml_view="false" table_reference="false" text_index="false" element_reference="false" primary="false" plural="Departure dates" create_roles="" read_roles="" write_roles="" delete_roles=""/>
+    <element name="return_date" type="glide_date" active="true" array="false" audit="false" unique="false" label="Return date" mandatory="true" read_only="false" choice="0" display="false" function_field="false" attributes="" spell_check="false" xml_view="false" table_reference="false" text_index="false" element_reference="false" primary="false" plural="Return dates" create_roles="" read_roles="" write_roles="" delete_roles=""/>
+    <element name="transportation" type="choice" active="true" array="false" audit="false" unique="false" label="Transportation" mandatory="false" read_only="false" choice="0" display="false" function_field="false" attributes="" spell_check="false" xml_view="false" table_reference="false" text_index="false" element_reference="false" primary="false" plural="Transportations" create_roles="" read_roles="" write_roles="" delete_roles="">
+      <choice>
+        <element value="flight" label="Flight" inactive="false" inactive_on_update="false" sequence="1" language="en"/>
+        <element value="car_rental" label="Car Rental" inactive="false" inactive_on_update="false" sequence="2" language="en"/>
+        <element value="personal_vehicle" label="Personal Vehicle" inactive="false" inactive_on_update="false" sequence="3" language="en"/>
+      </choice>
+    </element>
+    <element name="flight_class" type="choice" active="true" array="false" audit="false" unique="false" label="Flight class" mandatory="false" read_only="false" choice="0" display="false" function_field="false" attributes="" spell_check="false" xml_view="false" table_reference="false" text_index="false" element_reference="false" primary="false" plural="Flight class" create_roles="" read_roles="" write_roles="" delete_roles="">
+      <choice>
+        <element value="economy" label="Economy" inactive="false" inactive_on_update="false" sequence="1" language="en"/>
+        <element value="premium_economy" label="Premium Economy" inactive="false" inactive_on_update="false" sequence="2" language="en"/>
+        <element value="business" label="Business" inactive="false" inactive_on_update="false" sequence="3" language="en"/>
+      </choice>
+    </element>
+    <element name="rental_car_size" type="choice" active="true" array="false" audit="false" unique="false" label="Rental car size" mandatory="false" read_only="false" choice="0" display="false" function_field="false" attributes="" spell_check="false" xml_view="false" table_reference="false" text_index="false" element_reference="false" primary="false" plural="Rental car sizes" create_roles="" read_roles="" write_roles="" delete_roles="">
+      <choice>
+        <element value="compact" label="Compact" inactive="false" inactive_on_update="false" sequence="1" language="en"/>
+        <element value="mid_size" label="Mid-size" inactive="false" inactive_on_update="false" sequence="2" language="en"/>
+        <element value="full_size" label="Full-size" inactive="false" inactive_on_update="false" sequence="3" language="en"/>
+        <element value="suv" label="SUV" inactive="false" inactive_on_update="false" sequence="4" language="en"/>
+      </choice>
+    </element>
+    <element name="mileage_estimate" type="integer" active="true" array="false" audit="false" unique="false" label="Mileage estimate" mandatory="false" read_only="false" choice="0" display="false" function_field="false" attributes="" spell_check="false" xml_view="false" table_reference="false" text_index="false" element_reference="false" primary="false" plural="Mileage estimates" create_roles="" read_roles="" write_roles="" delete_roles=""/>
+    <element name="international_trip" type="boolean" active="true" array="false" audit="false" default_value="false" unique="false" label="International trip" mandatory="false" read_only="false" choice="0" display="false" function_field="false" attributes="" spell_check="false" xml_view="false" table_reference="false" text_index="false" element_reference="false" primary="false" plural="International trips" create_roles="" read_roles="" write_roles="" delete_roles=""/>
+    <element name="passport_expiration_date" type="glide_date" active="true" array="false" audit="false" unique="false" label="Passport expiration date" mandatory="false" read_only="false" choice="0" display="false" function_field="false" attributes="" spell_check="false" xml_view="false" table_reference="false" text_index="false" element_reference="false" primary="false" plural="Passport expiration dates" create_roles="" read_roles="" write_roles="" delete_roles=""/>
+    <element name="visa_required" type="boolean" active="true" array="false" audit="false" default_value="false" unique="false" label="Visa required" mandatory="false" read_only="false" choice="0" display="false" function_field="false" attributes="" spell_check="false" xml_view="false" table_reference="false" text_index="false" element_reference="false" primary="false" plural="Visa required" create_roles="" read_roles="" write_roles="" delete_roles=""/>
+    <element name="business_justification" type="multi_two_lines" active="true" array="false" audit="false" unique="false" label="Business justification" mandatory="true" read_only="false" choice="0" display="false" function_field="false" attributes="" spell_check="false" xml_view="false" table_reference="false" text_index="false" element_reference="false" primary="false" plural="Business justifications" create_roles="" read_roles="" write_roles="" delete_roles=""/>
+    <element name="estimated_total_cost" type="decimal" active="true" array="false" audit="false" unique="false" label="Estimated total cost" mandatory="false" read_only="false" choice="0" display="false" function_field="false" attributes="" spell_check="false" xml_view="false" table_reference="false" text_index="false" element_reference="false" primary="false" plural="Estimated total costs" create_roles="" read_roles="" write_roles="" delete_roles=""/>
+  </element>
+</database>

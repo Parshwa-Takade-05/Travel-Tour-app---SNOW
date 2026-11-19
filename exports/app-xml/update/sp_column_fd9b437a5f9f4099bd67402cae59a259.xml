@@ -1,0 +1,16 @@
+<?xml version="1.0"?>
+<record_update table="sp_column">
+  <sp_column action="INSERT_OR_UPDATE" apply_defaults="true">
+    <sys_id>fd9b437a5f9f4099bd67402cae59a259</sys_id>
+    <sys_scope display_value="x_2313668_pumkin_s">6d98fdf2b9b9499ca2f33b08ea2d1e7f</sys_scope>
+    <sys_update_name>sp_column_fd9b437a5f9f4099bd67402cae59a259</sys_update_name>
+    <class_name/>
+    <order>100</order>
+    <semantic_tag/>
+    <size>12</size>
+    <size_lg/>
+    <size_sm>12</size_sm>
+    <size_xs>12</size_xs>
+    <sp_row>15d2a72a38ab4f34882f65c8cdebc350</sp_row>
+  </sp_column>
+</record_update>

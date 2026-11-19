@@ -1,0 +1,45 @@
+<?xml version="1.0"?>
+<record_update>
+  <sys_ui_section caption="International Travel" section_id="38c4d59a143c415b83f5bd5b009a6f08" sys_domain="global" table="x_2313668_pumkin_s_travel_request" view="">
+    <sys_ui_element action="INSERT_OR_UPDATE" apply_defaults="true">
+      <element>international_trip</element>
+      <position>0</position>
+      <sys_id>64eeecc264e04d99956b927eb7f97c34</sys_id>
+      <sys_ui_formatter/>
+      <sys_ui_section caption="International Travel" display_value="International Travel" name="x_2313668_pumkin_s_travel_request" sys_domain="global" view="Default view">38c4d59a143c415b83f5bd5b009a6f08</sys_ui_section>
+      <sys_user/>
+      <type/>
+    </sys_ui_element>
+    <sys_ui_element action="INSERT_OR_UPDATE" apply_defaults="true">
+      <element>passport_expiration_date</element>
+      <position>1</position>
+      <sys_id>9f0f308c74d1460184992468feb8a5c5</sys_id>
+      <sys_ui_formatter/>
+      <sys_ui_section caption="International Travel" display_value="International Travel" name="x_2313668_pumkin_s_travel_request" sys_domain="global" view="Default view">38c4d59a143c415b83f5bd5b009a6f08</sys_ui_section>
+      <sys_user/>
+      <type/>
+    </sys_ui_element>
+    <sys_ui_element action="INSERT_OR_UPDATE" apply_defaults="true">
+      <element>visa_required</element>
+      <position>2</position>
+      <sys_id>1c81a34ebabd4202839420360687eb0a</sys_id>
+      <sys_ui_formatter/>
+      <sys_ui_section caption="International Travel" display_value="International Travel" name="x_2313668_pumkin_s_travel_request" sys_domain="global" view="Default view">38c4d59a143c415b83f5bd5b009a6f08</sys_ui_section>
+      <sys_user/>
+      <type/>
+    </sys_ui_element>
+    <sys_ui_section action="INSERT_OR_UPDATE" apply_defaults="true">
+      <caption>International Travel</caption>
+      <header>false</header>
+      <name>x_2313668_pumkin_s_travel_request</name>
+      <roles/>
+      <sys_domain>global</sys_domain>
+      <sys_id>38c4d59a143c415b83f5bd5b009a6f08</sys_id>
+      <sys_scope display_value="x_2313668_pumkin_s">6d98fdf2b9b9499ca2f33b08ea2d1e7f</sys_scope>
+      <sys_user/>
+      <title>false</title>
+      <view_name/>
+      <view name="NULL" display_value="Default view">Default view</view>
+    </sys_ui_section>
+  </sys_ui_section>
+</record_update>

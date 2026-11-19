@@ -1,0 +1,412 @@
+<?xml version="1.0"?>
+<record_update table="sp_widget">
+  <sp_widget action="INSERT_OR_UPDATE" apply_defaults="true">
+    <sys_id>2a6fe72097cb44b398fd5a95cd652d4a</sys_id>
+    <sys_scope display_value="x_2313668_pumkin_s">6d98fdf2b9b9499ca2f33b08ea2d1e7f</sys_scope>
+    <sys_update_name>sp_widget_2a6fe72097cb44b398fd5a95cd652d4a</sys_update_name>
+    <category>custom</category>
+    <client_script><![CDATA[api.controller = function () {
+    var c = this;
+
+    c.view = 'form';
+    c.saving = false;
+    c.errors = [];
+    c.touched = false;
+
+    c.form = angular.extend({
+        title: '',
+        purpose: '',
+        destination_city: '',
+        departure_date: '',
+        return_date: '',
+        transportation: '',
+        flight_class: '',
+        rental_car_size: '',
+        mileage_estimate: null,
+        international_trip: false,
+        passport_expiration_date: '',
+        visa_required: false,
+        business_justification: '',
+        estimated_total_cost: null
+    }, c.data.form || {});
+
+    c.transportOptions = [
+        { value: 'flight', label: 'Flight', icon: 'fa-plane' },
+        { value: 'car_rental', label: 'Car Rental', icon: 'fa-car' },
+        { value: 'personal_vehicle', label: 'Personal Vehicle', icon: 'fa-road' }
+    ];
+
+    c.setTransport = function (value) {
+        c.form.transportation = value;
+    };
+
+    c.missing = function (field) {
+        return c.touched && !c.form[field];
+    };
+
+    c.save = function () {
+        c.touched = true;
+        c.errors = [];
+        if (!c.form.title || !c.form.departure_date || !c.form.return_date || !c.form.business_justification) {
+            c.errors = ['Please complete the required fields.'];
+            return;
+        }
+
+        c.saving = true;
+        c.data.action = 'save';
+        c.data.sysId = c.data.sysId || '';
+        c.data.form = angular.copy(c.form);
+        c.data.form.departure_date = c.toIso(c.form.departure_date);
+        c.data.form.return_date = c.toIso(c.form.return_date);
+        c.data.form.passport_expiration_date = c.toIso(c.form.passport_expiration_date);
+
+        c.server.update().then(function () {
+            c.saving = false;
+            var result = c.data.result;
+            c.data.action = null;
+            if (result && result.success) {
+                c.savedId = result.sys_id;
+                c.edited = result.edited;
+                c.view = 'success';
+            } else if (result) {
+                c.errors = result.errors;
+            }
+        });
+    };
+
+    // Date inputs can hand back Date objects; the server expects yyyy-MM-dd.
+    c.toIso = function (value) {
+        if (!value) { return ''; }
+        if (angular.isDate(value)) {
+            var m = ('0' + (value.getMonth() + 1)).slice(-2);
+            var d = ('0' + value.getDate()).slice(-2);
+            return value.getFullYear() + '-' + m + '-' + d;
+        }
+        return value;
+    };
+
+    // The date inputs bind to Date objects; convert any loaded ISO strings.
+    angular.forEach(['departure_date', 'return_date', 'passport_expiration_date'], function (key) {
+        var v = c.form[key];
+        if (v && angular.isString(v)) {
+            var p = v.split('-');
+            c.form[key] = new Date(Number(p[0]), Number(p[1]) - 1, Number(p[2]));
+        }
+    });
+};
+]]></client_script>
+    <controller_as>c</controller_as>
+    <css/>
+    <data_table>sp_instance</data_table>
+    <demo_data/>
+    <description>Create or edit a travel request</description>
+    <docs/>
+    <field_list/>
+    <has_preview>false</has_preview>
+    <id>x_2313668_pumkin_s_request_form</id>
+    <internal>false</internal>
+    <link>function link(scope, element, attrs, controller) {
+}</link>
+    <name>Tour Travel Request Form</name>
+    <option_schema/>
+    <public>false</public>
+    <roles/>
+    <script><![CDATA[(function () {
+    var TABLE = 'x_2313668_pumkin_s_travel_request';
+
+    data.choices = {
+        purpose: [
+            { value: 'tour_leg', label: 'Tour Leg' },
+            { value: 'festival', label: 'Festival' },
+            { value: 'promo_appearance', label: 'Promo Appearance' },
+            { value: 'recording_session', label: 'Recording Session' },
+            { value: 'other', label: 'Other' }
+        ],
+        flightClass: [
+            { value: 'economy', label: 'Economy' },
+            { value: 'premium_economy', label: 'Premium Economy' },
+            { value: 'business', label: 'Business' }
+        ],
+        carSize: [
+            { value: 'compact', label: 'Compact' },
+            { value: 'mid_size', label: 'Mid-size' },
+            { value: 'full_size', label: 'Full-size' },
+            { value: 'suv', label: 'SUV' }
+        ]
+    };
+
+    data.sysId = '';
+    data.form = {};
+    data.allowed = true;
+    data.result = null;
+
+    var FIELDS = ['title', 'purpose', 'destination_city', 'departure_date', 'return_date',
+        'transportation', 'flight_class', 'rental_car_size', 'mileage_estimate',
+        'international_trip', 'passport_expiration_date', 'visa_required',
+        'business_justification', 'estimated_total_cost'];
+
+    // Initial load: blank form, or the record being edited.
+    var paramId = $sp.getParameter('sys_id');
+    if (!input && paramId) {
+        var existing = new GlideRecord(TABLE);
+        if (existing.get(paramId)) {
+            if (existing.canWrite()) {
+                data.sysId = paramId;
+                for (var i = 0; i < FIELDS.length; i++) {
+                    var f = FIELDS[i];
+                    var v = existing.getValue(f);
+                    if (f === 'international_trip' || f === 'visa_required') {
+                        data.form[f] = v === '1';
+                    } else if (f === 'mileage_estimate' || f === 'estimated_total_cost') {
+                        data.form[f] = v ? Number(v) : null;
+                    } else {
+                        data.form[f] = v || '';
+                    }
+                }
+            } else {
+                data.allowed = false;
+            }
+        }
+    } else if (!input) {
+        data.allowed = new GlideRecord(TABLE).canCreate();
+    }
+
+    // Save (create or update)
+    if (input && input.action === 'save') {
+        var f2 = input.form || {};
+        var errors = [];
+
+        if (!f2.title || !String(f2.title).trim()) { errors.push('Title is required.'); }
+        if (!f2.departure_date) { errors.push('Departure date is required.'); }
+        if (!f2.return_date) { errors.push('Return date is required.'); }
+        if (f2.departure_date && f2.return_date && f2.return_date < f2.departure_date) {
+            errors.push('Return date cannot be before the departure date.');
+        }
+        if (!f2.business_justification || !String(f2.business_justification).trim()) {
+            errors.push('Business justification is required.');
+        }
+        if (f2.international_trip && f2.passport_expiration_date && f2.return_date &&
+            f2.passport_expiration_date < f2.return_date) {
+            errors.push('Passport expires before the trip ends. Renew it before travelling.');
+        }
+
+        if (errors.length) {
+            data.result = { success: false, errors: errors };
+            return;
+        }
+
+        var gr = new GlideRecord(TABLE);
+        var editing = false;
+        if (input.sysId) {
+            if (!gr.get(input.sysId) || !gr.canWrite()) {
+                data.result = { success: false, errors: ['You do not have permission to edit this request.'] };
+                return;
+            }
+            editing = true;
+        } else {
+            gr.initialize();
+            if (!gr.canCreate()) {
+                data.result = { success: false, errors: ['You do not have permission to submit requests.'] };
+                return;
+            }
+        }
+
+        var transport = f2.transportation || '';
+        var intl = !!f2.international_trip;
+
+        gr.setValue('title', String(f2.title).trim());
+        gr.setValue('purpose', f2.purpose || '');
+        gr.setValue('destination_city', f2.destination_city || '');
+        gr.setValue('departure_date', f2.departure_date);
+        gr.setValue('return_date', f2.return_date);
+        gr.setValue('transportation', transport);
+        // Only keep the detail that matches the chosen transportation (mirrors the form UI policies).
+        gr.setValue('flight_class', transport === 'flight' ? (f2.flight_class || '') : '');
+        gr.setValue('rental_car_size', transport === 'car_rental' ? (f2.rental_car_size || '') : '');
+        gr.setValue('mileage_estimate', transport === 'personal_vehicle' && f2.mileage_estimate ? f2.mileage_estimate : '');
+        gr.setValue('international_trip', intl);
+        gr.setValue('passport_expiration_date', intl ? (f2.passport_expiration_date || '') : '');
+        gr.setValue('visa_required', intl ? !!f2.visa_required : false);
+        gr.setValue('business_justification', String(f2.business_justification).trim());
+        gr.setValue('estimated_total_cost', f2.estimated_total_cost || '');
+
+        var id = editing ? gr.update() : gr.insert();
+        if (!id) {
+            data.result = { success: false, errors: ['The request could not be saved. Please try again.'] };
+            return;
+        }
+        data.result = { success: true, sys_id: String(id), edited: editing };
+    }
+})();
+]]></script>
+    <servicenow>false</servicenow>
+    <template><![CDATA[<div class="tt">
+
+  <div class="tt-page-head">
+    <div>
+      <a class="tt-back" href="?id=x_2313668_pumkin_s_home"><i class="fa fa-angle-left" aria-hidden="true"></i> All trips</a>
+      <h1 class="tt-page-title">{{c.data.sysId ? 'Edit travel request' : 'New travel request'}}</h1>
+      <p class="tt-page-sub">Tell us where the music is going next.</p>
+    </div>
+  </div>
+
+  <div class="tt-alert" ng-if="!c.data.allowed">
+    You do not have permission to {{c.data.sysId ? 'edit this request' : 'submit travel requests'}}.
+  </div>
+
+  <div ng-if="c.data.allowed && c.view === 'form'">
+    <div class="tt-steps" aria-hidden="true">
+      <span class="tt-step"><span class="tt-step-num">1</span> Trip basics</span>
+      <span class="tt-step"><span class="tt-step-num">2</span> Travel details</span>
+      <span class="tt-step"><span class="tt-step-num">3</span> International</span>
+      <span class="tt-step"><span class="tt-step-num">4</span> Justification</span>
+    </div>
+
+    <div class="tt-alert" role="alert" ng-if="c.errors.length">
+      <ul><li ng-repeat="err in c.errors track by $index">{{err}}</li></ul>
+    </div>
+
+    <form name="tripForm" ng-submit="c.save()" novalidate>
+
+      <!-- Trip Basics -->
+      <section class="tt-panel">
+        <div class="tt-panel-head">
+          <span class="tt-panel-icon tt-tag-violet"><i class="fa fa-map-signs" aria-hidden="true"></i></span>
+          <div><h2 class="tt-panel-title">Trip basics</h2></div>
+        </div>
+        <div class="tt-fields">
+          <div class="tt-field tt-field-wide">
+            <label for="tt-title">Title <span class="tt-req">*</span></label>
+            <input id="tt-title" class="tt-input" ng-class="{'tt-input-error': c.missing('title')}" type="text" ng-model="c.form.title" maxlength="160" placeholder="e.g. Querystring - Berlin Festival" />
+            <div class="tt-error" ng-if="c.missing('title')">Title is required.</div>
+          </div>
+          <div class="tt-field">
+            <label for="tt-purpose">Purpose</label>
+            <select id="tt-purpose" class="tt-input" ng-model="c.form.purpose"
+                    ng-options="o.value as o.label for o in c.data.choices.purpose">
+              <option value="">Select a purpose</option>
+            </select>
+          </div>
+          <div class="tt-field">
+            <label for="tt-city">Destination city</label>
+            <input id="tt-city" class="tt-input" type="text" ng-model="c.form.destination_city" maxlength="100" placeholder="e.g. Berlin" />
+          </div>
+          <div class="tt-field">
+            <label for="tt-dep">Departure date <span class="tt-req">*</span></label>
+            <input id="tt-dep" class="tt-input" ng-class="{'tt-input-error': c.missing('departure_date')}" type="date" ng-model="c.form.departure_date" />
+            <div class="tt-error" ng-if="c.missing('departure_date')">Departure date is required.</div>
+          </div>
+          <div class="tt-field">
+            <label for="tt-ret">Return date <span class="tt-req">*</span></label>
+            <input id="tt-ret" class="tt-input" ng-class="{'tt-input-error': c.missing('return_date')}" type="date" ng-model="c.form.return_date" />
+            <div class="tt-error" ng-if="c.missing('return_date')">Return date is required.</div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Travel Details -->
+      <section class="tt-panel">
+        <div class="tt-panel-head">
+          <span class="tt-panel-icon tt-tag-teal"><i class="fa fa-road" aria-hidden="true"></i></span>
+          <div><h2 class="tt-panel-title">Travel details</h2><p class="tt-panel-note">Pick how you are getting there.</p></div>
+        </div>
+        <div class="tt-seg" role="radiogroup" aria-label="Transportation">
+          <button type="button" role="radio" class="tt-seg-item"
+                  ng-repeat="t in c.transportOptions track by t.value"
+                  aria-checked="{{c.form.transportation === t.value}}"
+                  ng-class="{'tt-seg-active': c.form.transportation === t.value}"
+                  ng-click="c.setTransport(t.value)">
+            <i class="fa" ng-class="t.icon" aria-hidden="true"></i>{{t.label}}
+          </button>
+        </div>
+
+        <div class="tt-fields" ng-if="c.form.transportation">
+          <div class="tt-field" ng-if="c.form.transportation === 'flight'">
+            <label for="tt-class">Flight class</label>
+            <select id="tt-class" class="tt-input" ng-model="c.form.flight_class"
+                    ng-options="o.value as o.label for o in c.data.choices.flightClass">
+              <option value="">Select a class</option>
+            </select>
+          </div>
+          <div class="tt-field" ng-if="c.form.transportation === 'car_rental'">
+            <label for="tt-car">Rental car size</label>
+            <select id="tt-car" class="tt-input" ng-model="c.form.rental_car_size"
+                    ng-options="o.value as o.label for o in c.data.choices.carSize">
+              <option value="">Select a size</option>
+            </select>
+          </div>
+          <div class="tt-field" ng-if="c.form.transportation === 'personal_vehicle'">
+            <label for="tt-miles">Mileage estimate</label>
+            <input id="tt-miles" class="tt-input" type="number" min="0" ng-model="c.form.mileage_estimate" placeholder="Total miles" />
+          </div>
+        </div>
+      </section>
+
+      <!-- International Travel -->
+      <section class="tt-panel">
+        <div class="tt-panel-head">
+          <span class="tt-panel-icon tt-tag-pink"><i class="fa fa-globe" aria-hidden="true"></i></span>
+          <div><h2 class="tt-panel-title">International travel</h2></div>
+        </div>
+        <label class="tt-toggle" for="tt-intl">
+          <input id="tt-intl" type="checkbox" ng-model="c.form.international_trip" />
+          <span>This is an international trip</span>
+        </label>
+        <div class="tt-fields" ng-if="c.form.international_trip">
+          <div class="tt-field">
+            <label for="tt-passport">Passport expiration date</label>
+            <input id="tt-passport" class="tt-input" type="date" ng-model="c.form.passport_expiration_date" />
+          </div>
+          <div class="tt-field">
+            <label for="tt-visa">Visa required</label>
+            <label class="tt-toggle" for="tt-visa">
+              <input id="tt-visa" type="checkbox" ng-model="c.form.visa_required" />
+              <span>A visa is required</span>
+            </label>
+          </div>
+        </div>
+      </section>
+
+      <!-- Justification -->
+      <section class="tt-panel">
+        <div class="tt-panel-head">
+          <span class="tt-panel-icon tt-tag-amber"><i class="fa fa-pencil-square-o" aria-hidden="true"></i></span>
+          <div><h2 class="tt-panel-title">Justification</h2></div>
+        </div>
+        <div class="tt-fields">
+          <div class="tt-field tt-field-wide">
+            <label for="tt-why">Business justification <span class="tt-req">*</span></label>
+            <textarea id="tt-why" class="tt-input" ng-class="{'tt-input-error': c.missing('business_justification')}" ng-model="c.form.business_justification" placeholder="Why does this trip need to happen?"></textarea>
+            <div class="tt-error" ng-if="c.missing('business_justification')">Business justification is required.</div>
+          </div>
+          <div class="tt-field">
+            <label for="tt-cost">Estimated total cost</label>
+            <input id="tt-cost" class="tt-input" type="number" min="0" step="0.01" ng-model="c.form.estimated_total_cost" placeholder="0.00" />
+          </div>
+        </div>
+      </section>
+
+      <div class="tt-actions">
+        <a class="tt-btn tt-btn-ghost" href="?id=x_2313668_pumkin_s_home">Cancel</a>
+        <button type="submit" class="tt-btn tt-btn-primary" ng-disabled="c.saving">
+          <span ng-if="c.saving"><i class="fa fa-spinner fa-spin" aria-hidden="true"></i> Saving</span>
+          <span ng-if="!c.saving">{{c.data.sysId ? 'Save changes' : 'Submit request'}}</span>
+        </button>
+      </div>
+    </form>
+  </div>
+
+  <div class="tt-success" ng-if="c.view === 'success'">
+    <i class="fa fa-check-circle" aria-hidden="true"></i>
+    <h2>{{c.edited ? 'Request updated' : 'Request submitted'}}</h2>
+    <p>Your travel request has been saved.</p>
+    <div class="tt-actions">
+      <a class="tt-btn tt-btn-primary" href="?id=x_2313668_pumkin_s_detail&amp;sys_id={{c.savedId}}">View request</a>
+      <a class="tt-btn tt-btn-ghost" href="?id=x_2313668_pumkin_s_home">Back to all trips</a>
+    </div>
+  </div>
+
+</div>
+]]></template>
+  </sp_widget>
+</record_update>

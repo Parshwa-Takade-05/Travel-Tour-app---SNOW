@@ -1,0 +1,19 @@
+<?xml version="1.0"?>
+<record_update table="sys_ui_policy_action">
+  <sys_ui_policy_action action="INSERT_OR_UPDATE" apply_defaults="true">
+    <sys_id>422434ee766c4a789c0113f8bac730f0</sys_id>
+    <sys_scope display_value="x_2313668_pumkin_s">6d98fdf2b9b9499ca2f33b08ea2d1e7f</sys_scope>
+    <sys_update_name>sys_ui_policy_action_422434ee766c4a789c0113f8bac730f0</sys_update_name>
+    <cleared>false</cleared>
+    <disabled>ignore</disabled>
+    <field>flight_class</field>
+    <field_message/>
+    <field_message_type>none</field_message_type>
+    <mandatory>ignore</mandatory>
+    <table>x_2313668_pumkin_s_travel_request</table>
+    <ui_policy table="x_2313668_pumkin_s_travel_request" short_description="No transportation selected: hide mode-specific fields">36cce2fab9454d31ae6824a5f2fdf71f</ui_policy>
+    <value/>
+    <value_action>ignore</value_action>
+    <visible>false</visible>
+  </sys_ui_policy_action>
+</record_update>

@@ -1,0 +1,20 @@
+<?xml version="1.0"?>
+<record_update table="x_2313668_pumkin_s_travel_request">
+  <x_2313668_pumkin_s_travel_request action="INSERT_OR_UPDATE" apply_defaults="true">
+    <sys_id>510efc8bb41b4d4ba7b55f76f7172099</sys_id>
+    <sys_scope display_value="x_2313668_pumkin_s">6d98fdf2b9b9499ca2f33b08ea2d1e7f</sys_scope>
+    <sys_update_name>x_2313668_pumkin_s_travel_request_510efc8bb41b4d4ba7b55f76f7172099</sys_update_name>
+    <business_justification>Major Outage needs a full-size rental to move band members and equipment between London tour venues.</business_justification>
+    <departure_date>2027-09-02</departure_date>
+    <destination_city>London</destination_city>
+    <estimated_total_cost>3100</estimated_total_cost>
+    <international_trip>true</international_trip>
+    <passport_expiration_date>2028-11-20</passport_expiration_date>
+    <purpose>tour_leg</purpose>
+    <rental_car_size>full_size</rental_car_size>
+    <return_date>2027-09-08</return_date>
+    <title>Major Outage - London Tour Leg</title>
+    <transportation>car_rental</transportation>
+    <visa_required>true</visa_required>
+  </x_2313668_pumkin_s_travel_request>
+</record_update>

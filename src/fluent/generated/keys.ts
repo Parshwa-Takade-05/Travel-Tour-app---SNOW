@@ -32,6 +32,7 @@ declare global {
                     package_json: {
                         table: 'sys_module'
                         id: '2e7c465e4fc04423825ab2dccdc9f09e'
+                        deleted: true
                     }
                     src_server_script_js: {
                         table: 'sys_module'
@@ -393,6 +394,13 @@ declare global {
                         }
                     },
                     {
+                        table: 'sys_ux_lib_asset'
+                        id: '2effff74264a473d9800bfcd2e065167'
+                        key: {
+                            name: 'x_2313668_pumkin_s/main.js.map'
+                        }
+                    },
+                    {
                         table: 'sys_documentation'
                         id: '33d360d76f9545f195df85e07e941f0d'
                         key: {
@@ -422,6 +430,14 @@ declare global {
                                 }
                             }
                             sys_domain: 'global'
+                        }
+                    },
+                    {
+                        table: 'sn_glider_source_artifact_m2m'
+                        id: '402121d06cfc4637829ccc18a0b11398'
+                        key: {
+                            application_file: 'c6ddffe04baf455d8e777f291bf0b8a8'
+                            source_artifact: 'ce3a86a32cc64eae8023502ed6f9c30f'
                         }
                     },
                     {
@@ -733,6 +749,14 @@ declare global {
                         }
                     },
                     {
+                        table: 'sn_glider_source_artifact_m2m'
+                        id: '78fbd2983e104535bc5ed9eaea00eff1'
+                        key: {
+                            application_file: 'e63bcc491efc4b4c889ec6adbfc0430d'
+                            source_artifact: 'ce3a86a32cc64eae8023502ed6f9c30f'
+                        }
+                    },
+                    {
                         table: 'sys_choice'
                         id: '790fa48920ce4d8788860a8a61e8c96b'
                         key: {
@@ -741,6 +765,14 @@ declare global {
                             value: 'other'
                             language: 'en'
                             dependent_value: 'NULL'
+                        }
+                    },
+                    {
+                        table: 'sn_glider_source_artifact_m2m'
+                        id: '7cfbda54bd1341e19ce9f3777b269555'
+                        key: {
+                            application_file: '2effff74264a473d9800bfcd2e065167'
+                            source_artifact: 'ce3a86a32cc64eae8023502ed6f9c30f'
                         }
                     },
                     {
@@ -1136,6 +1168,13 @@ declare global {
                         }
                     },
                     {
+                        table: 'sys_ux_lib_asset'
+                        id: 'c6ddffe04baf455d8e777f291bf0b8a8'
+                        key: {
+                            name: 'x_2313668_pumkin_s/main'
+                        }
+                    },
+                    {
                         table: 'sys_ui_section'
                         id: 'c7ba83b896384f8890a53d0105a8c1a2'
                         key: {
@@ -1162,6 +1201,13 @@ declare global {
                                 }
                             }
                             sys_domain: 'global'
+                        }
+                    },
+                    {
+                        table: 'sn_glider_source_artifact'
+                        id: 'ce3a86a32cc64eae8023502ed6f9c30f'
+                        key: {
+                            name: 'x_2313668_pumkin_s_incident_manager.do - BYOUI Files'
                         }
                     },
                     {
@@ -1303,6 +1349,13 @@ declare global {
                             name: 'x_2313668_pumkin_s_travel_request'
                             element: 'rental_car_size'
                             language: 'en'
+                        }
+                    },
+                    {
+                        table: 'sys_ui_page'
+                        id: 'e63bcc491efc4b4c889ec6adbfc0430d'
+                        key: {
+                            endpoint: 'x_2313668_pumkin_s_incident_manager.do'
                         }
                     },
                     {

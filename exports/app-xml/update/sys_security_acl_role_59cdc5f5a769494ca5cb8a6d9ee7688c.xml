@@ -1,0 +1,11 @@
+<?xml version="1.0"?>
+<record_update table="sys_security_acl_role">
+  <sys_security_acl_role action="INSERT_OR_UPDATE" apply_defaults="true">
+    <sys_id>59cdc5f5a769494ca5cb8a6d9ee7688c</sys_id>
+    <sys_scope display_value="x_2313668_pumkin_s">6d98fdf2b9b9499ca2f33b08ea2d1e7f</sys_scope>
+    <sys_update_name>sys_security_acl_role_59cdc5f5a769494ca5cb8a6d9ee7688c</sys_update_name>
+    <sys_name>x_2313668_pumkin_s_travel_request.admin</sys_name>
+    <sys_security_acl>fe88410742d042ea8908d8706170dd28</sys_security_acl>
+    <sys_user_role name="admin">78b560516a174c1aaadb8909bf45c553</sys_user_role>
+  </sys_security_acl_role>
+</record_update>

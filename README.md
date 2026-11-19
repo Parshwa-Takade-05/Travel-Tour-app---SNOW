@@ -60,3 +60,17 @@ See [docs/ARCHITECTURE.md](docs/ARCHITECTURE.md) for design details.
 
 - Credentials are stored by the SDK in your user profile, never in this repo.
 - If an Employee Center page shows "not found", add the page to that portal's menu.
+
+## Export for a new instance
+
+`exports/` holds the build output of this app:
+
+- `exports/pumkin_seeds_0_0_1.zip` – installable package (`now-sdk pack`)
+- `exports/app-xml/` – every application file as ServiceNow XML (tables, portal, widgets, ACLs, demo data)
+
+To install on a new instance, either:
+
+1. Clone this repo, then run `npx now-sdk auth --add <alias>` for the new instance followed by `npm run deploy`, or
+2. Run `npx now-sdk install` against the package in `exports/` after re-building with `npm run build`.
+
+The XML in `exports/app-xml/` is in the SDK's application-file format, not a Retrieved/Local Update Set, so it is for reference and SDK installs rather than System Update Sets > Import XML.

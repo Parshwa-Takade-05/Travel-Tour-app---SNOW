@@ -1,0 +1,34 @@
+<?xml version="1.0"?>
+<record_update table="sp_rectangle_menu_item">
+  <sp_rectangle_menu_item action="INSERT_OR_UPDATE" apply_defaults="true">
+    <sys_id>58adc2a4014d440484ac9d94483c5379</sys_id>
+    <sys_scope display_value="x_2313668_pumkin_s">6d98fdf2b9b9499ca2f33b08ea2d1e7f</sys_scope>
+    <sys_update_name>sp_rectangle_menu_item_58adc2a4014d440484ac9d94483c5379</sys_update_name>
+    <active>true</active>
+    <color>default</color>
+    <condition/>
+    <display_1/>
+    <display_2/>
+    <display_date/>
+    <filter/>
+    <glyph>plus-sign</glyph>
+    <hint/>
+    <kb_article/>
+    <kb_category/>
+    <kb_topic/>
+    <label>New request</label>
+    <order>200</order>
+    <record_script/>
+    <roles/>
+    <sc_cat_item/>
+    <sc_category/>
+    <short_description/>
+    <sp_page id="x_2313668_pumkin_s_request">98a6ae0d1e234a2c805463ffa228014a</sp_page>
+    <sp_rectangle_menu>5d719e32a88f4a3b835eab270afd1d03</sp_rectangle_menu>
+    <sp_rectangle_menu_item/>
+    <table/>
+    <type>page</type>
+    <url/>
+    <url_target/>
+  </sp_rectangle_menu_item>
+</record_update>

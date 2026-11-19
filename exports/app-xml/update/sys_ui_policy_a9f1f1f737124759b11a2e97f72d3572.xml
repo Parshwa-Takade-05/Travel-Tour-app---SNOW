@@ -1,0 +1,31 @@
+<?xml version="1.0"?>
+<record_update table="sys_ui_policy">
+  <sys_ui_policy action="INSERT_OR_UPDATE" apply_defaults="true">
+    <sys_id>a9f1f1f737124759b11a2e97f72d3572</sys_id>
+    <sys_scope display_value="x_2313668_pumkin_s">6d98fdf2b9b9499ca2f33b08ea2d1e7f</sys_scope>
+    <sys_update_name>sys_ui_policy_a9f1f1f737124759b11a2e97f72d3572</sys_update_name>
+    <active>true</active>
+    <conditions>transportation=personal_vehicle</conditions>
+    <description/>
+    <global>true</global>
+    <inherit>false</inherit>
+    <isolate_script>false</isolate_script>
+    <model_id/>
+    <model_table/>
+    <on_load>true</on_load>
+    <order>100</order>
+    <reverse_if_false>false</reverse_if_false>
+    <run_scripts>false</run_scripts>
+    <script_false>function onCondition() {
+
+}</script_false>
+    <script_true>function onCondition() {
+
+}</script_true>
+    <set_values/>
+    <short_description>Transportation = Personal Vehicle: show Mileage estimate</short_description>
+    <table>x_2313668_pumkin_s_travel_request</table>
+    <ui_type>0</ui_type>
+    <view/>
+  </sys_ui_policy>
+</record_update>

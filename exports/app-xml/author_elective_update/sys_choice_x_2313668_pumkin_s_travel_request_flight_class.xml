@@ -1,0 +1,48 @@
+<?xml version="1.0"?>
+<record_update>
+  <sys_choice_set action="INSERT_OR_UPDATE" field="flight_class" table="x_2313668_pumkin_s_travel_request" version="3" apply_defaults="true">
+    <sys_choice_set action="INSERT_OR_UPDATE" apply_defaults="true">
+      <sys_id>6302298e03c54cf3b6d4fc575ebeb75c</sys_id>
+      <element>flight_class</element>
+      <sys_update_name>sys_choice_x_2313668_pumkin_s_travel_request_flight_class</sys_update_name>
+      <name>x_2313668_pumkin_s_travel_request</name>
+      <sys_class_name>sys_choice_set</sys_class_name>
+      <sys_scope display_value="x_2313668_pumkin_s">6d98fdf2b9b9499ca2f33b08ea2d1e7f</sys_scope>
+      <sys_package display_value="x_2313668_pumkin_s" source="6d98fdf2b9b9499ca2f33b08ea2d1e7f">6d98fdf2b9b9499ca2f33b08ea2d1e7f</sys_package>
+      <sys_name>flight_class</sys_name>
+    </sys_choice_set>
+    <sys_choice action="INSERT_OR_UPDATE" apply_defaults="true">
+      <sys_id>d4317e7a17b64350b3fc2aa2e9f46d80</sys_id>
+      <name>x_2313668_pumkin_s_travel_request</name>
+      <element>flight_class</element>
+      <label>Economy</label>
+      <value>economy</value>
+      <sequence>1</sequence>
+      <inactive>false</inactive>
+      <inactive_on_update>false</inactive_on_update>
+      <language>en</language>
+    </sys_choice>
+    <sys_choice action="INSERT_OR_UPDATE" apply_defaults="true">
+      <sys_id>1c790468aed64b56944aa69a6536b778</sys_id>
+      <name>x_2313668_pumkin_s_travel_request</name>
+      <element>flight_class</element>
+      <label>Premium Economy</label>
+      <value>premium_economy</value>
+      <sequence>2</sequence>
+      <inactive>false</inactive>
+      <inactive_on_update>false</inactive_on_update>
+      <language>en</language>
+    </sys_choice>
+    <sys_choice action="INSERT_OR_UPDATE" apply_defaults="true">
+      <sys_id>9da2e5889cbf4f40a591a7dbec4d477c</sys_id>
+      <name>x_2313668_pumkin_s_travel_request</name>
+      <element>flight_class</element>
+      <label>Business</label>
+      <value>business</value>
+      <sequence>3</sequence>
+      <inactive>false</inactive>
+      <inactive_on_update>false</inactive_on_update>
+      <language>en</language>
+    </sys_choice>
+  </sys_choice_set>
+</record_update>

@@ -1,0 +1,54 @@
+<?xml version="1.0"?>
+<record_update>
+  <sys_ui_section caption="Travel Details" section_id="1517f4df8b5c48978c45c284ab6f6e2a" sys_domain="global" table="x_2313668_pumkin_s_travel_request" view="">
+    <sys_ui_element action="INSERT_OR_UPDATE" apply_defaults="true">
+      <element>transportation</element>
+      <position>0</position>
+      <sys_id>973268505b044ab8b3c48468c4687321</sys_id>
+      <sys_ui_formatter/>
+      <sys_ui_section caption="Travel Details" display_value="Travel Details" name="x_2313668_pumkin_s_travel_request" sys_domain="global" view="Default view">1517f4df8b5c48978c45c284ab6f6e2a</sys_ui_section>
+      <sys_user/>
+      <type/>
+    </sys_ui_element>
+    <sys_ui_element action="INSERT_OR_UPDATE" apply_defaults="true">
+      <element>flight_class</element>
+      <position>1</position>
+      <sys_id>2919d873c5194d268b7140debb2e9dc5</sys_id>
+      <sys_ui_formatter/>
+      <sys_ui_section caption="Travel Details" display_value="Travel Details" name="x_2313668_pumkin_s_travel_request" sys_domain="global" view="Default view">1517f4df8b5c48978c45c284ab6f6e2a</sys_ui_section>
+      <sys_user/>
+      <type/>
+    </sys_ui_element>
+    <sys_ui_element action="INSERT_OR_UPDATE" apply_defaults="true">
+      <element>rental_car_size</element>
+      <position>2</position>
+      <sys_id>b43ab88917db4d55b81ac4cbaebcb225</sys_id>
+      <sys_ui_formatter/>
+      <sys_ui_section caption="Travel Details" display_value="Travel Details" name="x_2313668_pumkin_s_travel_request" sys_domain="global" view="Default view">1517f4df8b5c48978c45c284ab6f6e2a</sys_ui_section>
+      <sys_user/>
+      <type/>
+    </sys_ui_element>
+    <sys_ui_element action="INSERT_OR_UPDATE" apply_defaults="true">
+      <element>mileage_estimate</element>
+      <position>3</position>
+      <sys_id>0227b474219e4e11b3eadab77b519b6e</sys_id>
+      <sys_ui_formatter/>
+      <sys_ui_section caption="Travel Details" display_value="Travel Details" name="x_2313668_pumkin_s_travel_request" sys_domain="global" view="Default view">1517f4df8b5c48978c45c284ab6f6e2a</sys_ui_section>
+      <sys_user/>
+      <type/>
+    </sys_ui_element>
+    <sys_ui_section action="INSERT_OR_UPDATE" apply_defaults="true">
+      <caption>Travel Details</caption>
+      <header>false</header>
+      <name>x_2313668_pumkin_s_travel_request</name>
+      <roles/>
+      <sys_domain>global</sys_domain>
+      <sys_id>1517f4df8b5c48978c45c284ab6f6e2a</sys_id>
+      <sys_scope display_value="x_2313668_pumkin_s">6d98fdf2b9b9499ca2f33b08ea2d1e7f</sys_scope>
+      <sys_user/>
+      <title>false</title>
+      <view_name/>
+      <view name="NULL" display_value="Default view">Default view</view>
+    </sys_ui_section>
+  </sys_ui_section>
+</record_update>

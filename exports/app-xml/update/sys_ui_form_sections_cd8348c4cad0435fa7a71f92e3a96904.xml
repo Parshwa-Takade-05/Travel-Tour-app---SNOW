@@ -1,0 +1,38 @@
+<?xml version="1.0"?>
+<record_update>
+  <sys_ui_form_sections form_id="cd8348c4cad0435fa7a71f92e3a96904" sys_domain="global" table="x_2313668_pumkin_s_travel_request">
+    <sys_ui_form_section action="INSERT_OR_UPDATE" apply_defaults="true">
+      <position>0</position>
+      <sys_id>8fe0ff6bb8cf4578a6abccc65876ed15</sys_id>
+      <sys_ui_form display_value="x_2313668_pumkin_s_travel_request" name="x_2313668_pumkin_s_travel_request" sys_domain="global" view="Default view">cd8348c4cad0435fa7a71f92e3a96904</sys_ui_form>
+      <sys_ui_section caption="Trip Basics" display_value="Trip Basics" name="x_2313668_pumkin_s_travel_request" sys_domain="global" view="Default view">c7ba83b896384f8890a53d0105a8c1a2</sys_ui_section>
+    </sys_ui_form_section>
+    <sys_ui_form_section action="INSERT_OR_UPDATE" apply_defaults="true">
+      <position>1</position>
+      <sys_id>8e57f72e1bc44c9b9da62adf69e7e8ea</sys_id>
+      <sys_ui_form display_value="x_2313668_pumkin_s_travel_request" name="x_2313668_pumkin_s_travel_request" sys_domain="global" view="Default view">cd8348c4cad0435fa7a71f92e3a96904</sys_ui_form>
+      <sys_ui_section caption="Travel Details" display_value="Travel Details" name="x_2313668_pumkin_s_travel_request" sys_domain="global" view="Default view">1517f4df8b5c48978c45c284ab6f6e2a</sys_ui_section>
+    </sys_ui_form_section>
+    <sys_ui_form_section action="INSERT_OR_UPDATE" apply_defaults="true">
+      <position>2</position>
+      <sys_id>50182c63286d4ebc810b8b4ed6a7fb7e</sys_id>
+      <sys_ui_form display_value="x_2313668_pumkin_s_travel_request" name="x_2313668_pumkin_s_travel_request" sys_domain="global" view="Default view">cd8348c4cad0435fa7a71f92e3a96904</sys_ui_form>
+      <sys_ui_section caption="International Travel" display_value="International Travel" name="x_2313668_pumkin_s_travel_request" sys_domain="global" view="Default view">38c4d59a143c415b83f5bd5b009a6f08</sys_ui_section>
+    </sys_ui_form_section>
+    <sys_ui_form_section action="INSERT_OR_UPDATE" apply_defaults="true">
+      <position>3</position>
+      <sys_id>07732148d14c41d89037a2124eeb79dd</sys_id>
+      <sys_ui_form display_value="x_2313668_pumkin_s_travel_request" name="x_2313668_pumkin_s_travel_request" sys_domain="global" view="Default view">cd8348c4cad0435fa7a71f92e3a96904</sys_ui_form>
+      <sys_ui_section caption="Justification" display_value="Justification" name="x_2313668_pumkin_s_travel_request" sys_domain="global" view="Default view">9d127abd64064a15890fd23966639ee2</sys_ui_section>
+    </sys_ui_form_section>
+    <sys_ui_form action="INSERT_OR_UPDATE" apply_defaults="true">
+      <name>x_2313668_pumkin_s_travel_request</name>
+      <roles/>
+      <sys_id>cd8348c4cad0435fa7a71f92e3a96904</sys_id>
+      <sys_scope display_value="x_2313668_pumkin_s">6d98fdf2b9b9499ca2f33b08ea2d1e7f</sys_scope>
+      <sys_user/>
+      <view name="NULL" display_value="Default view">Default view</view>
+      <view_name/>
+    </sys_ui_form>
+  </sys_ui_form_sections>
+</record_update>

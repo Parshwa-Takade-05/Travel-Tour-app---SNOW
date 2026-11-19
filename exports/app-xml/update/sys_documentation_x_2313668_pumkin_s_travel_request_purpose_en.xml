@@ -1,0 +1,17 @@
+<?xml version="1.0"?>
+<record_update table="sys_documentation">
+  <sys_documentation action="INSERT_OR_UPDATE" apply_defaults="true">
+    <sys_id>bf43bfff2d7c4e508f294f2d114b2760</sys_id>
+    <sys_scope display_value="x_2313668_pumkin_s">6d98fdf2b9b9499ca2f33b08ea2d1e7f</sys_scope>
+    <sys_update_name>sys_documentation_x_2313668_pumkin_s_travel_request_purpose_en</sys_update_name>
+    <element>purpose</element>
+    <help/>
+    <hint/>
+    <label>Purpose</label>
+    <language>en</language>
+    <name>x_2313668_pumkin_s_travel_request</name>
+    <plural>Purposes</plural>
+    <url/>
+    <url_target/>
+  </sys_documentation>
+</record_update>

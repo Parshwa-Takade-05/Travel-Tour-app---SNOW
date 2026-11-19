@@ -1,0 +1,63 @@
+<?xml version="1.0"?>
+<record_update>
+  <sys_ui_section caption="Trip Basics" section_id="c7ba83b896384f8890a53d0105a8c1a2" sys_domain="global" table="x_2313668_pumkin_s_travel_request" view="">
+    <sys_ui_element action="INSERT_OR_UPDATE" apply_defaults="true">
+      <element>title</element>
+      <position>0</position>
+      <sys_id>e203d06198264c5ab20bed82c6f45150</sys_id>
+      <sys_ui_formatter/>
+      <sys_ui_section caption="Trip Basics" display_value="Trip Basics" name="x_2313668_pumkin_s_travel_request" sys_domain="global" view="Default view">c7ba83b896384f8890a53d0105a8c1a2</sys_ui_section>
+      <sys_user/>
+      <type/>
+    </sys_ui_element>
+    <sys_ui_element action="INSERT_OR_UPDATE" apply_defaults="true">
+      <element>purpose</element>
+      <position>1</position>
+      <sys_id>73ca7b4d59224484b04fa87aba274436</sys_id>
+      <sys_ui_formatter/>
+      <sys_ui_section caption="Trip Basics" display_value="Trip Basics" name="x_2313668_pumkin_s_travel_request" sys_domain="global" view="Default view">c7ba83b896384f8890a53d0105a8c1a2</sys_ui_section>
+      <sys_user/>
+      <type/>
+    </sys_ui_element>
+    <sys_ui_element action="INSERT_OR_UPDATE" apply_defaults="true">
+      <element>destination_city</element>
+      <position>2</position>
+      <sys_id>ff8d35ac28e64eee8aac7a648a7699a2</sys_id>
+      <sys_ui_formatter/>
+      <sys_ui_section caption="Trip Basics" display_value="Trip Basics" name="x_2313668_pumkin_s_travel_request" sys_domain="global" view="Default view">c7ba83b896384f8890a53d0105a8c1a2</sys_ui_section>
+      <sys_user/>
+      <type/>
+    </sys_ui_element>
+    <sys_ui_element action="INSERT_OR_UPDATE" apply_defaults="true">
+      <element>departure_date</element>
+      <position>3</position>
+      <sys_id>7e6756763bf544eb9cbfe44e0877eea3</sys_id>
+      <sys_ui_formatter/>
+      <sys_ui_section caption="Trip Basics" display_value="Trip Basics" name="x_2313668_pumkin_s_travel_request" sys_domain="global" view="Default view">c7ba83b896384f8890a53d0105a8c1a2</sys_ui_section>
+      <sys_user/>
+      <type/>
+    </sys_ui_element>
+    <sys_ui_element action="INSERT_OR_UPDATE" apply_defaults="true">
+      <element>return_date</element>
+      <position>4</position>
+      <sys_id>7790abe7bd37418eb3066487e15ab2e0</sys_id>
+      <sys_ui_formatter/>
+      <sys_ui_section caption="Trip Basics" display_value="Trip Basics" name="x_2313668_pumkin_s_travel_request" sys_domain="global" view="Default view">c7ba83b896384f8890a53d0105a8c1a2</sys_ui_section>
+      <sys_user/>
+      <type/>
+    </sys_ui_element>
+    <sys_ui_section action="INSERT_OR_UPDATE" apply_defaults="true">
+      <caption>Trip Basics</caption>
+      <header>false</header>
+      <name>x_2313668_pumkin_s_travel_request</name>
+      <roles/>
+      <sys_domain>global</sys_domain>
+      <sys_id>c7ba83b896384f8890a53d0105a8c1a2</sys_id>
+      <sys_scope display_value="x_2313668_pumkin_s">6d98fdf2b9b9499ca2f33b08ea2d1e7f</sys_scope>
+      <sys_user/>
+      <title>false</title>
+      <view_name/>
+      <view name="NULL" display_value="Default view">Default view</view>
+    </sys_ui_section>
+  </sys_ui_section>
+</record_update>

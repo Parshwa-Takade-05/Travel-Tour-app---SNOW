@@ -1,0 +1,21 @@
+<?xml version="1.0"?>
+<record_update table="sys_dictionary">
+  <sys_dictionary action="INSERT_OR_UPDATE" element="" table="x_2313668_pumkin_s_travel_request" apply_defaults="true">
+    <sys_id>75d616338bb342a4a5de389fc61cbd19</sys_id>
+    <sys_scope display_value="x_2313668_pumkin_s">6d98fdf2b9b9499ca2f33b08ea2d1e7f</sys_scope>
+    <sys_update_name>sys_dictionary_x_2313668_pumkin_s_travel_request_null</sys_update_name>
+    <active>true</active>
+    <attributes/>
+    <audit>false</audit>
+    <create_roles/>
+    <delete_roles/>
+    <element/>
+    <internal_type>collection</internal_type>
+    <name>x_2313668_pumkin_s_travel_request</name>
+    <read_only>false</read_only>
+    <read_roles/>
+    <sizeclass/>
+    <text_index>false</text_index>
+    <write_roles/>
+  </sys_dictionary>
+</record_update>

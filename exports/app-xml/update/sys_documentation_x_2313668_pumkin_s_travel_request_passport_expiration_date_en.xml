@@ -1,0 +1,17 @@
+<?xml version="1.0"?>
+<record_update table="sys_documentation">
+  <sys_documentation action="INSERT_OR_UPDATE" apply_defaults="true">
+    <sys_id>a1d170e05c554c2490c2f465311c8430</sys_id>
+    <sys_scope display_value="x_2313668_pumkin_s">6d98fdf2b9b9499ca2f33b08ea2d1e7f</sys_scope>
+    <sys_update_name>sys_documentation_x_2313668_pumkin_s_travel_request_passport_expiration_date_en</sys_update_name>
+    <element>passport_expiration_date</element>
+    <help/>
+    <hint/>
+    <label>Passport expiration date</label>
+    <language>en</language>
+    <name>x_2313668_pumkin_s_travel_request</name>
+    <plural>Passport expiration dates</plural>
+    <url/>
+    <url_target/>
+  </sys_documentation>
+</record_update>

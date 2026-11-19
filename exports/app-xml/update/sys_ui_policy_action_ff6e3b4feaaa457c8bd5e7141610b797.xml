@@ -1,0 +1,19 @@
+<?xml version="1.0"?>
+<record_update table="sys_ui_policy_action">
+  <sys_ui_policy_action action="INSERT_OR_UPDATE" apply_defaults="true">
+    <sys_id>ff6e3b4feaaa457c8bd5e7141610b797</sys_id>
+    <sys_scope display_value="x_2313668_pumkin_s">6d98fdf2b9b9499ca2f33b08ea2d1e7f</sys_scope>
+    <sys_update_name>sys_ui_policy_action_ff6e3b4feaaa457c8bd5e7141610b797</sys_update_name>
+    <cleared>false</cleared>
+    <disabled>ignore</disabled>
+    <field>mileage_estimate</field>
+    <field_message/>
+    <field_message_type>none</field_message_type>
+    <mandatory>ignore</mandatory>
+    <table>x_2313668_pumkin_s_travel_request</table>
+    <ui_policy table="x_2313668_pumkin_s_travel_request" short_description="Transportation = Car Rental: show Rental car size">70f28df7aa474887a4085e62a93b0f5c</ui_policy>
+    <value/>
+    <value_action>ignore</value_action>
+    <visible>false</visible>
+  </sys_ui_policy_action>
+</record_update>

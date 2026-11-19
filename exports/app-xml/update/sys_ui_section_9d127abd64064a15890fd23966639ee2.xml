@@ -1,0 +1,36 @@
+<?xml version="1.0"?>
+<record_update>
+  <sys_ui_section caption="Justification" section_id="9d127abd64064a15890fd23966639ee2" sys_domain="global" table="x_2313668_pumkin_s_travel_request" view="">
+    <sys_ui_element action="INSERT_OR_UPDATE" apply_defaults="true">
+      <element>business_justification</element>
+      <position>0</position>
+      <sys_id>de420399cddf4b6a858f443c2d976bf4</sys_id>
+      <sys_ui_formatter/>
+      <sys_ui_section caption="Justification" display_value="Justification" name="x_2313668_pumkin_s_travel_request" sys_domain="global" view="Default view">9d127abd64064a15890fd23966639ee2</sys_ui_section>
+      <sys_user/>
+      <type/>
+    </sys_ui_element>
+    <sys_ui_element action="INSERT_OR_UPDATE" apply_defaults="true">
+      <element>estimated_total_cost</element>
+      <position>1</position>
+      <sys_id>b74dfdcf202c4c0d8d5648c7bd07e5ee</sys_id>
+      <sys_ui_formatter/>
+      <sys_ui_section caption="Justification" display_value="Justification" name="x_2313668_pumkin_s_travel_request" sys_domain="global" view="Default view">9d127abd64064a15890fd23966639ee2</sys_ui_section>
+      <sys_user/>
+      <type/>
+    </sys_ui_element>
+    <sys_ui_section action="INSERT_OR_UPDATE" apply_defaults="true">
+      <caption>Justification</caption>
+      <header>false</header>
+      <name>x_2313668_pumkin_s_travel_request</name>
+      <roles/>
+      <sys_domain>global</sys_domain>
+      <sys_id>9d127abd64064a15890fd23966639ee2</sys_id>
+      <sys_scope display_value="x_2313668_pumkin_s">6d98fdf2b9b9499ca2f33b08ea2d1e7f</sys_scope>
+      <sys_user/>
+      <title>false</title>
+      <view_name/>
+      <view name="NULL" display_value="Default view">Default view</view>
+    </sys_ui_section>
+  </sys_ui_section>
+</record_update>

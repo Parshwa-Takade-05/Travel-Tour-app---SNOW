@@ -1,0 +1,20 @@
+<?xml version="1.0"?>
+<record_update table="x_2313668_pumkin_s_travel_request">
+  <x_2313668_pumkin_s_travel_request action="INSERT_OR_UPDATE" apply_defaults="true">
+    <sys_id>256e37fc7ae443ae928129213a675df8</sys_id>
+    <sys_scope display_value="x_2313668_pumkin_s">6d98fdf2b9b9499ca2f33b08ea2d1e7f</sys_scope>
+    <sys_update_name>x_2313668_pumkin_s_travel_request_256e37fc7ae443ae928129213a675df8</sys_update_name>
+    <business_justification>Querystring is a scheduled festival act in Berlin; long-haul travel requires business class for performance readiness.</business_justification>
+    <departure_date>2027-06-10</departure_date>
+    <destination_city>Berlin</destination_city>
+    <estimated_total_cost>4200</estimated_total_cost>
+    <flight_class>business</flight_class>
+    <international_trip>true</international_trip>
+    <passport_expiration_date>2029-03-01</passport_expiration_date>
+    <purpose>festival</purpose>
+    <return_date>2027-06-15</return_date>
+    <title>Querystring - Berlin Festival</title>
+    <transportation>flight</transportation>
+    <visa_required>true</visa_required>
+  </x_2313668_pumkin_s_travel_request>
+</record_update>

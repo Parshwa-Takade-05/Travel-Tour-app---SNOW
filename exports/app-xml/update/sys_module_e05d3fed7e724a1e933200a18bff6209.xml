@@ -1,0 +1,20 @@
+<?xml version="1.0"?>
+<record_update table="sys_module">
+  <sys_module action="INSERT_OR_UPDATE" apply_defaults="true">
+    <sys_id>e05d3fed7e724a1e933200a18bff6209</sys_id>
+    <sys_scope display_value="x_2313668_pumkin_s">6d98fdf2b9b9499ca2f33b08ea2d1e7f</sys_scope>
+    <sys_update_name>sys_module_e05d3fed7e724a1e933200a18bff6209</sys_update_name>
+    <content><![CDATA[import { gs } from '@servicenow/glide'
+
+export function showStateUpdate(current, previous) {
+    const currentState = current.getValue('state')
+    const previousState = previous.getValue('state')
+
+    gs.addInfoMessage(`state updated from "${previousState}" to "${currentState}"`)
+}
+]]></content>
+    <external_source>false</external_source>
+    <path>x_2313668_pumkin_s/pumkin-seeds/0.0.1/src/server/script.js</path>
+    <sys_name>x_2313668_pumkin_s/pumkin-seeds/0.0.1/src/server/script.js</sys_name>
+  </sys_module>
+</record_update>
